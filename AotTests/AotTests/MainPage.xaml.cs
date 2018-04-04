@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.SignalR.Client;
 using Xamarin.Forms;
 
 namespace AotTests
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+	    private HubConnection _hubConnection;
+
+        public MainPage()
 		{
 			InitializeComponent();
-		}
+		    _hubConnection = new HubConnectionBuilder()
+		        .Build();
+        }
 	}
 }
